@@ -4,15 +4,21 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter as Router} from "react-router-dom";
+import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+
+const client =  new ApolloClient({
+    cache: new InMemoryCache(),
+    uri: 'https://beta.pokeapi.co/graphql/v1beta'
+})
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
       <Router>
-          <App />
+          <ApolloProvider client={client}>
+              <App />
+          </ApolloProvider>
       </Router>
-
-
   </React.StrictMode>
 );
 
