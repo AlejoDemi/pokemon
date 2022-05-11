@@ -12,6 +12,8 @@
 }
 .container .searchBar{
     background: #D0CE50;
+    min-height: 30px;
+    min-width: 200px;
     width: 20%;
     height: 4%;
     margin-left: auto;

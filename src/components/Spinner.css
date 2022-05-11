@@ -6,7 +6,7 @@
     border-radius: 50%;
     border: 8px solid black;
     animation: spin 1s linear infinite;
-    margin: 200px auto auto auto;
+    margin: 200px 50% auto 50%;
 }
 
 .spinner::before {

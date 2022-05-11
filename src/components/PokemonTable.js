@@ -6,9 +6,11 @@ import Spinner from "./Spinner";
 
 const PokemonTable = () => {
 
+    const [search,setSearch] = useState("");
+
     const GET_POKEMONS = gql`
         query getPokemos {
-            pokemon_v2_pokemonspecies(offset: 0, limit: 25, order_by: {id: asc}) {
+            pokemon_v2_pokemonspecies(offset: 0, limit: 10000, order_by: {id: asc}) {
         capture_rate
         id
         is_legendary
@@ -35,13 +37,19 @@ const PokemonTable = () => {
     },[]);
 
 
-    const listPokemons=list.map((pokemon,index)=> <button className="item" key={index}>{pokemon.name}</button>);
+    const listPokemons=
+        search.length>0? list.filter((val)=> {
+          if (search==="")return val;
+          else if (val.name.toLowerCase().includes(search.toLowerCase()))return val
+        }).map((pokemon,index)=>
+        (index<10 && <button className="item" key={index}>{pokemon.name}</button>)):null;
 
     return (
         !loading?
         <div className="container">
             <h1>CokemonPedia</h1>
-            <input className="searchBar" placeholder="Search your Pokemon..."></input>
+            <input className="searchBar"  type="text" placeholder="Search your Pokemon..."
+                    onChange={(e)=> setSearch(e.target.value)}></input>
             <div className="list">
                 {listPokemons}
             </div>
