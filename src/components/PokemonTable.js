@@ -8,7 +8,7 @@ const PokemonTable = () => {
 
     const GET_POKEMONS = gql`
         query getPokemos {
-            pokemon_v2_pokemonspecies(offset: 10, limit: 10, order_by: {id: asc}) {
+            pokemon_v2_pokemonspecies(offset: 0, limit: 25, order_by: {id: asc}) {
         capture_rate
         id
         is_legendary
@@ -18,11 +18,16 @@ const PokemonTable = () => {
       }
     }`;
 
-    const[list ,setList] = useState([]);
+    const[list ,setList] = useState([
+        {name:"Pikachu"},
+        {name:"Charmander"}
+    ]);
 
-    const [getPokemonList,{loading}]=useLazyQuery(GET_POKEMONS,
+    const [getPokemonList,{data,loading}]=useLazyQuery(GET_POKEMONS,
         {
-            onCompleted:  r => setList(r.data.pokemon_v2_pokemonspecies),
+            onCompleted:  r => {
+                setList(r.pokemon_v2_pokemonspecies)
+            },
     });
 
     useEffect(() => {
@@ -30,12 +35,12 @@ const PokemonTable = () => {
     },[]);
 
 
-    const listPokemons=list.map((pokemon,index)=> <button className="item" key={index}>{index+1}- {pokemon.name}</button>);
+    const listPokemons=list.map((pokemon,index)=> <button className="item" key={index}>{pokemon.name}</button>);
 
     return (
         !loading?
         <div className="container">
-            <h1>Cokemon Pedia</h1>
+            <h1>CokemonPedia</h1>
             <input className="searchBar" placeholder="Search your Pokemon..."></input>
             <div className="list">
                 {listPokemons}

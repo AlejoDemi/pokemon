@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image:url("https://wallpaper-mania.com/wp-content/uploads/2018/09/High_resolution_wallpaper_background_ID_77700143024.jpg");
+  background-image:url("https://hdwallpaperim.com/wp-content/uploads/2017/08/24/120467-Pokemon.jpg");
 }
 
 code {
@@ -15,4 +15,5 @@ code {
 
 @font-face {
   font-family: 'Pokemon Hollow';
-  src: local('Pokemon Hollow'), url(./fonts/PokemonHollow.ttf) format('truetype');}
+  src: local('Pokemon Hollow'), url(./fonts/PokemonHollow.ttf) format('truetype');
+}
