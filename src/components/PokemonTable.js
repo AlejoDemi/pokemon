@@ -4,6 +4,7 @@ import {useLazyQuery, useQuery} from "@apollo/client";
 import {useEffect, useState} from "react";
 import Spinner from "./Spinner"
 import {useNavigate} from "react-router-dom";
+import PokemonData from "./PokemonData";
 
 const PokemonTable = () => {
 
@@ -45,13 +46,32 @@ const PokemonTable = () => {
     return (
         !loading?
         <div className="container">
-            <h1>CokemonPedia</h1>
-            <input className="searchBar"  type="text" placeholder="Search your Pokemon..."
-                    onChange={(e)=> setSearch(e.target.value)}></input>
-            <div className="list">
-                {listPokemons}
+            <div className="header">
+                <h1>CokemonPedia</h1>
+                <input className="searchBar"  type="text" placeholder="Search your Pokemon..."
+                       onChange={(e)=> setSearch(e.target.value)}></input>
             </div>
-        </div>:
+            <div className="body">
+
+
+            {
+                search==="" ?
+                    <div className="containerData">
+                        <PokemonData image="https://www.cinemascomics.com/wp-content/uploads/2020/06/pokemon-pikachu.jpg"></PokemonData>
+                        <PokemonData image="https://www.cinemascomics.com/wp-content/uploads/2020/06/pokemon-pikachu.jpg"></PokemonData>
+                        <PokemonData image="https://www.cinemascomics.com/wp-content/uploads/2020/06/pokemon-pikachu.jpg"></PokemonData>
+                        <PokemonData image="https://www.cinemascomics.com/wp-content/uploads/2020/06/pokemon-pikachu.jpg"></PokemonData>
+                    </div>
+                    :
+                    <div className="list">
+                        {listPokemons}
+                    </div>
+
+            }
+            </div>
+
+        </div>
+            :
             <Spinner></Spinner>
     );
 };

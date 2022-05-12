@@ -3,10 +3,11 @@ import {useParams} from "react-router-dom";
 import {gql} from "graphql-tag";
 import {useLazyQuery} from "@apollo/client";
 import {compact} from "@apollo/client/utilities";
+import "./PokemonData.css";
 
 
 
-const PokemonData = () => {
+const PokemonData = (props) => {
 
     const {id}=useParams();
 
@@ -40,9 +41,13 @@ const PokemonData = () => {
     },[id]);
 
         return (
-            <div>
+                <div className="card">
+                    { props.image?
+                    <img src={props.image}  alt="Loaging..."/>:
+                        null
+                    }
+                </div>
 
-            </div>
         );
     };
 

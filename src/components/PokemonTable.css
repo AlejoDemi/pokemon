@@ -6,11 +6,16 @@
     justify-content: center;
 }
 
-.container h1{
+.container .header{
+    width: 100%;
+    height: 30%;
+}
+
+.header h1{
     font-family: "Pokemon Hollow", serif;
     font-size: 70px;
 }
-.container .searchBar{
+.header .searchBar{
     background: #D0CE50;
     min-height: 30px;
     min-width: 200px;
@@ -44,8 +49,12 @@
     border: 2px solid #D1432F;
 }
 
+.container .body{
+    height: 70%;
+}
 
-.container .list{
+
+.body .list{
     display: flex;
     flex-direction: column;
     width: 20%;
@@ -62,4 +71,10 @@
 
 .list  .item:hover{
     color: red;
+}
+
+.body .containerData{
+    margin-top: 1px;
+    display: flex;
+    flex-direction: row;
 }
