@@ -2,11 +2,11 @@
     position: relative;
     height: 100px;
     width: 100px;
-    background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50% );
+    background: linear-gradient(to bottom, #D00000 50%, white 50% );
     border-radius: 50%;
     border: 8px solid black;
     animation: spin 1s linear infinite;
-    margin: 200px 50% auto 50%;
+    margin: 40vh auto;
 }
 
 .spinner::before {

@@ -1,0 +1,103 @@
+.pokemonInfo{
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: 100vh;
+}
+
+.pokemonInfo .header{
+    height: 8vh;
+    background: #D00000;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.pokemonInfo .icon{
+    margin-left: 20px;
+    color: #032B43;
+    cursor: pointer;
+}
+
+
+.pokeCard{
+    padding: 10px;
+    width: 20%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #FFBA08;
+    min-width: 250px;
+    min-height: 300px;
+    text-align: center;
+    background: #FBF593;
+    margin: auto;
+    border-radius: 5px;
+
+}
+
+.itemCard{
+    padding: 10px;
+    width: 20%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    border: 10px solid #FFBA08;
+    min-width: 250px;
+    min-height: 300px;
+    text-align: center;
+    background: #FBF593;
+    margin: auto;
+    border-radius: 5px;
+
+}
+
+.pokeCard .name{
+    height: 10%;
+    text-align: center;
+}
+
+
+
+.name h1 {
+    font-size: 120%;
+    font-family: serif;
+    margin: auto;
+}
+
+.pokeCard .imageContainer {
+    border: 7px solid #FFBA08;
+    height: 45%;
+    width: 80%;
+    align-self: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.imageContainer img {
+    min-height: 300px;
+    align-self: center;
+}
+
+.pokeCard .pokeData{
+    height: 45%;
+    width: 100%;
+    overflow: scroll;
+}
+
+.pokeData button{
+    background: #D00000;
+    color: white;
+    width: 80px;
+    height: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pokeData h3{
+    font-size: 100%;
+}
+
+
