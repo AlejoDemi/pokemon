@@ -8,19 +8,19 @@
 
 .container .headerHome{
     width: 100%;
-    height: 30%;
+    height: 50%;
 }
 
 .container .carousel{
-    height: 70vh;
+    height: 50vh;
     width: 40vw;
     align-items: center;
     margin: auto;
 }
 
 .carousel img{
-    height: 50%;
-    width: 50%;
+    height: 500px;
+    width: 300px;
 }
 
 .headerHome h1{
